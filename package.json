@@ -1,0 +1,29 @@
+{
+  "name": "@ksathyanm/chromedriver",
+  "version": "1.0.0",
+  "description": "Chrome version based ChromeDriver for Selenium",
+  "main": "index.js",
+  "scripts": {
+    "install": "node install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksathyanm/chromedriver.git"
+  },
+  "keywords": [
+    "chrome",
+    "chromedriver",
+    "selenium"
+  ],
+  "author": "Sathyamoorthi Kandhasamy <ksathyanm@gmail.com> (https://github.com/ksathyanm)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksathyanm/chromedriver/issues"
+  },
+  "homepage": "https://github.com/ksathyanm/chromedriver#readme",
+  "dependencies": {
+    "chrome-launcher": "^0.11.1",
+    "chrome-remote-interface": "^0.27.2",
+    "node-fetch": "^2.6.0"
+  }
+}
