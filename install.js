@@ -1,8 +1,7 @@
 const fetch = require('node-fetch')
-const getChromeVersion = require("@ksathyanm/find-chrome-version")
+const findChromeVersion = require("find-chrome-version")
 
 const cdnUrl = process.env.npm_config_chromedriver_cdnurl || process.env.CHROMEDRIVER_CDNURL || 'https://chromedriver.storage.googleapis.com'
-
 
 const getChromeDriverVersion = async (chromeVersion) => {
   const { chromeVersionWithoutPatch } = /(?<chromeVersionWithoutPatch>.*)[.]\d+/.exec(chromeVersion).groups
@@ -11,7 +10,7 @@ const getChromeDriverVersion = async (chromeVersion) => {
 }
 
 (async () => {
-  const chromeVersion = await getChromeVersion()
+  const chromeVersion = await findChromeVersion()
   console.log(`Your Chrome version is ${chromeVersion}`)
 
   const chromedriverVersion = await getChromeDriverVersion(chromeVersion)

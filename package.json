@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/ksathyanm/chromedriver#readme",
   "dependencies": {
-    "@ksathyanm/find-chrome-version": "^1.0.0",
+    "find-chrome-version": "^1.0.1",
     "node-fetch": "^2.6.0"
   }
 }
