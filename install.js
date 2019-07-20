@@ -1,18 +1,8 @@
 const fetch = require('node-fetch')
-const ChromeLauncher = require('chrome-launcher')
-const CDP = require('chrome-remote-interface')
+const getChromeVersion = require("@ksathyanm/find-chrome-version")
 
 const cdnUrl = process.env.npm_config_chromedriver_cdnurl || process.env.CHROMEDRIVER_CDNURL || 'https://chromedriver.storage.googleapis.com'
 
-const getChromeVersion = async () => {
-  const chrome = await ChromeLauncher.launch({ chromeFlags: ['--headless'] })
-  const protocol = await CDP({ port: chrome.port })
-  const { product } = await protocol.Browser.getVersion()
-  const { chromeVersion } = /HeadlessChrome\/(?<chromeVersion>.*)/.exec(product).groups
-  protocol.close()
-  chrome.kill()
-  return chromeVersion
-}
 
 const getChromeDriverVersion = async (chromeVersion) => {
   const { chromeVersionWithoutPatch } = /(?<chromeVersionWithoutPatch>.*)[.]\d+/.exec(chromeVersion).groups

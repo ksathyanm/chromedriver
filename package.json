@@ -22,8 +22,7 @@
   },
   "homepage": "https://github.com/ksathyanm/chromedriver#readme",
   "dependencies": {
-    "chrome-launcher": "^0.11.1",
-    "chrome-remote-interface": "^0.27.2",
+    "@ksathyanm/find-chrome-version": "^1.0.0",
     "node-fetch": "^2.6.0"
   }
 }
