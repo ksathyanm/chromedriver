@@ -2,27 +2,40 @@
   "name": "@ksathyanm/chromedriver",
   "version": "1.0.0",
   "description": "Chrome version based ChromeDriver for Selenium",
-  "main": "index.js",
-  "scripts": {
-    "install": "node install.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ksathyanm/chromedriver.git"
-  },
   "keywords": [
     "chrome",
     "chromedriver",
-    "selenium"
+    "selenium",
+    "version"
   ],
-  "author": "Sathyamoorthi Kandhasamy <ksathyanm@gmail.com> (https://github.com/ksathyanm)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ksathyanm/chromedriver/issues"
-  },
   "homepage": "https://github.com/ksathyanm/chromedriver#readme",
+  "bugs": "https://github.com/ksathyanm/chromedriver/issues",
+  "repository": "ksathyanm/chromedriver",
+  "license": "MIT",
+  "author": "Sathyamoorthi Kandhasamy",
+  "files": [
+    "index.js",
+    "install.js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "ci": "npm run lint && npm run test",
+    "install": "node install.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "mocha ./test.js --timeout 10000"
+  },
   "dependencies": {
-    "find-chrome-version": "^1.0.1",
+    "find-chrome-version": "^1.0.2",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-google": "^0.13.0",
+    "mocha": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=8"
   }
 }
